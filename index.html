@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perpustakaan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <form action="#" class="form">
+      <div class="box">
+        <img class="search-logo" src="https://cdn.iconscout.com/icon/free/png-512/free-search-icon-download-in-svg-png-gif-file-formats--batch-user-interface-pack-icons-458863.png?f=webp&w=256" alt="Search Button">
+        <input type="text" placeholder="Search for 'comic'" value="">
+      </div>
+    </form>
+  </nav>
+
+  <header class="header">
+    <h1>Search for <span class="typing"></span><br>Book or Category</h1>
+
+    <div class="slide">
+      <button type="button">Book</button>
+      <button type="button">Favorit</button>
+      <button class="trending" type="button">Trending</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="books">
+      <div class="book"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
