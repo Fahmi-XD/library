@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const books = document.querySelector(".main .books");
+  
   new Typed('.typing', {
-    strings: ["Romantic", "Action", "Comic", "Story"],
+    strings: ["Action", "Comic", "Story"],
     typeSpeed: 50,
     backSpeed: 40,
     cursorChar: '|',
@@ -9,24 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
     backDelay: 5000,
   });
 
-  async function googleEbook(index, query) {
-    const enc_query = encodeURIComponent(query)
-    const list = await fetch(`https://www.googleapis.com/books/v1/volumes?filter=ebooks&maxResult=40&startIndex=2&q=${enc_query}`)
-    const load = await list.json();
-    console.log(load)
+  async function getBooks(index, query) {
+    try {
+      const enc_query = encodeURIComponent(query)
+      const list = await fetch(`http://localhost:3000/search?query=${enc_query}`)
+      const load = await list.json();
+      console.log(load.result)
+      load.result.forEach(v => {
+        books.innerHTML += `<div class="book">
+<img class="cover" src="${v.thumbnail}" alt="Cover" />
+  <div class="sub">
+    <h4 class="judul">${v.title.substring(0, 8) + "..."}</h4>
+    <p class="author">${v.author.join(", ").substring(0, 15) + "..."}</p>
+  </div>
+</div>`
+      })
+    } catch (e) {
+      console.log(e)
+    }
   }
 
-  async function isbndbEbook(index, query) {
-    const enc_query = encodeURIComponent(query)
-    const list = await axios.get(`https://isbndb.com/search/books?search_param=books&x=${enc_query}`)
-    const load = await list.data;
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(load, 'text/html');
-    const title = doc.querySelectorAll(".search-result-title")
-    title.forEach(v => {
-      console.log(v.textContent)
-    })
-  }
-
-  isbndbEbook("", "motivasi")
+  getBooks("", "coding")
 })

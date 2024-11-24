@@ -8,31 +8,63 @@
 </head>
 <body>
   <nav class="navbar">
+    <div class="nav">
+      <h1 class="title">eBook</h1>
+      <div class="right">
+        <img src="./assets/dark.jpeg" alt="Dark Button">
+        <img src="./assets/setting.svg" alt="Setting Button">
+        <img src="./assets/chat.svg" alt="Chat Button">
+      </div>
+    </div>
     <form action="#" class="form">
       <div class="box">
         <img class="search-logo" src="https://cdn.iconscout.com/icon/free/png-512/free-search-icon-download-in-svg-png-gif-file-formats--batch-user-interface-pack-icons-458863.png?f=webp&w=256" alt="Search Button">
         <input type="text" placeholder="Search for 'comic'" value="">
       </div>
+      <img class="search-logo right" src="./assets/logo.jpg" alt="Profile">
     </form>
   </nav>
 
   <header class="header">
-    <h1>Search for <span class="typing"></span><br>Book or Category</h1>
+    <div class="run">
+      <h1 class="sub-title"><span class="br-left">Search for</span> <span class="typing"></span><br>Book or Category</h1>
+    </div>
 
     <div class="slide">
-      <button type="button">Book</button>
-      <button type="button">Favorit</button>
+      <button type="button">ALL</button>
+      <button type="button">Manga</button>
+      <button type="button">Comic</button>
       <button class="trending" type="button">Trending</button>
+      <button type="button">Other</button>
     </div>
   </header>
 
   <main class="main">
-    <section class="books">
-      <div class="book"></div>
-    </section>
+    <section class="books"></section>
   </main>
+  
+  <nav class="navigation">
+    <div class="native active">
+      <img class="search-logo" src="./assets/home.svg" alt="Home Button">
+      <p>Home</p>
+    </div>
+    <div class="native">
+      <img class="search-logo" src="./assets/favorite.svg" alt="Favorite Button">
+      <p>Favorite</p>
+    </div>
+    <div class="native upload">
+      <img class="search-logo" src="./assets/plus.svg" alt="Pluss Button">
+    </div>
+    <div class="native">
+      <img class="search-logo" src="./assets/podium.svg" alt="Podium Button">
+      <p>Leaderboard</p>
+    </div>
+    <div class="native">
+      <img class="search-logo" src="./assets/profile.svg" alt="Profile Button">
+      <p>Profile</p>
+    </div>
+  </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="./script.js"></script>
 </body>
