@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perpustakaan</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1/dist/css/splide.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,10 +17,10 @@
         <img src="./assets/chat.svg" alt="Chat Button">
       </div>
     </div>
-    <form action="#" class="form">
+    <form class="form">
       <div class="box">
-        <img class="search-logo" src="https://cdn.iconscout.com/icon/free/png-512/free-search-icon-download-in-svg-png-gif-file-formats--batch-user-interface-pack-icons-458863.png?f=webp&w=256" alt="Search Button">
-        <input type="text" placeholder="Search for 'comic'" value="">
+        <img class="search-logo btn-search" src="https://cdn.iconscout.com/icon/free/png-512/free-search-icon-download-in-svg-png-gif-file-formats--batch-user-interface-pack-icons-458863.png?f=webp&w=256" alt="Search Button">
+        <input type="text" class="search" placeholder="Search for 'comic'" value="">
       </div>
       <img class="search-logo right" src="./assets/logo.jpg" alt="Profile">
     </form>
@@ -31,16 +32,32 @@
     </div>
 
     <div class="slide">
-      <button type="button">ALL</button>
-      <button type="button">Manga</button>
-      <button type="button">Comic</button>
-      <button class="trending" type="button">Trending</button>
-      <button type="button">Other</button>
+      <button type="button" data-section="library">Open Library</button>
+      <button type="button" data-section="manga">Manga</button>
+      <button type="button" data-section="comic">Comic</button>
+      <button class="trending" type="button" data-section="trending">Trending</button>
+      <button type="button" data-section="other">Other</button>
     </div>
   </header>
 
   <main class="main">
-    <section class="books"></section>
+    <section class="splide" aria-labelledby="carousel-heading">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <section class="sections home">
+              <h1>Loading...</h1>
+            </section>
+          </li>
+
+          <li class="splide__slide">
+            <section class="sections manga">
+              <h1>Halo Dunia</h1>
+            </section>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
   
   <nav class="navigation">
@@ -65,6 +82,8 @@
     </div>
   </nav>
 
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5/dist/js/splide-extension-auto-scroll.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1/dist/js/splide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="./script.js"></script>
 </body>
